@@ -1,0 +1,199 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{EE1D4A2F-8C23-4DFD-97B3-1F89722C00E1}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>HaselLibrary</RootNamespace>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v140_xp</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v140_xp</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup />
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>$(ProjectDir)Hasel;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <DisableSpecificWarnings>4819</DisableSpecificWarnings>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>$(ProjectDir)Hasel;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Hasel\algo\AlgorithmUtil\AlgorithmUtil.h" />
+    <ClInclude Include="Hasel\algo\AlgorithmInc.h" />
+    <ClInclude Include="Hasel\cs2d\CallbackStorage\CallbackStorage.h" />
+    <ClInclude Include="Hasel\cs2d\CollisionCallback\CollisionCallback.h" />
+    <ClInclude Include="Hasel\cs2d\CS2DUtil\CS2DUtil.h" />
+    <ClInclude Include="Hasel\cs2d\CollisionSystem2DInc.h" />
+    <ClInclude Include="Hasel\cs2d\RigidBodyStorage\RigidBodyStorage.h" />
+    <ClInclude Include="Hasel\cs2d\RigidBody\RigidBody.h" />
+    <ClInclude Include="Hasel\cs2d\World\World.h" />
+    <ClInclude Include="Hasel\file\ParamLoader\ParamLoader.h" />
+    <ClInclude Include="Hasel\Hasel.h" />
+    <ClInclude Include="Hasel\HaselAlias.h" />
+    <ClInclude Include="Hasel\Math\MathInc.h" />
+    <ClInclude Include="Hasel\math\MathUtility.h" />
+    <ClInclude Include="Hasel\Math\Vector2\Vector2.h" />
+    <ClInclude Include="Hasel\memory\MemoryInc.h" />
+    <ClInclude Include="Hasel\meta\IsCallable.h" />
+    <ClInclude Include="Hasel\meta\MetaInc.h" />
+    <ClInclude Include="Hasel\Shape\AABB\AABB.h" />
+    <ClInclude Include="Hasel\Shape\Circle\Circle.h" />
+    <ClInclude Include="Hasel\shape\ShapeBase\ShapeBase.h" />
+    <ClInclude Include="Hasel\Shape\ShapeHelper\ShapeHelper.h" />
+    <ClInclude Include="Hasel\Shape\ShapeInc.h" />
+    <ClInclude Include="Hasel\shape\ShapeUtil\ShapeUtil.h" />
+    <ClInclude Include="Hasel\shape\Shape\Shape.h" />
+    <ClInclude Include="Hasel\Singletized.h" />
+    <ClInclude Include="Hasel\time\Reserver\Reserver.h" />
+    <ClInclude Include="Hasel\time\Scheduler\Scheduler.h" />
+    <ClInclude Include="Hasel\time\TimeInc.h" />
+    <ClInclude Include="Hasel\time\TimerBase.h" />
+    <ClInclude Include="Hasel\time\TimerManager.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="targetver.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Hasel\algo\AlgorithmUtil\AlgorithmUtil.cpp" />
+    <ClCompile Include="Hasel\cs2d\CallbackStorage\CallbackStorage.cpp" />
+    <ClCompile Include="Hasel\cs2d\CollisionCallback\CollisionCallback.cpp" />
+    <ClCompile Include="Hasel\cs2d\CS2DUtil\CS2DUtil.cpp" />
+    <ClCompile Include="Hasel\cs2d\RigidBodyStorage\RigidBodyStorage.cpp" />
+    <ClCompile Include="Hasel\cs2d\RigidBody\RigidBody.cpp" />
+    <ClCompile Include="Hasel\cs2d\World\World.cpp" />
+    <ClCompile Include="Hasel\file\ParamLoader\ParamLoader.cpp" />
+    <ClCompile Include="Hasel\Math\Vector2\Vector2.cpp" />
+    <ClCompile Include="Hasel\Shape\AABB\AABB.cpp" />
+    <ClCompile Include="Hasel\Shape\Circle\Circle.cpp" />
+    <ClCompile Include="Hasel\Shape\ShapeHelper\ShapeHelper.cpp" />
+    <ClCompile Include="Hasel\shape\ShapeUtil\ShapeUtil.cpp" />
+    <ClCompile Include="Hasel\shape\Shape\Shape.cpp" />
+    <ClCompile Include="Hasel\time\Reserver\Reserver.cpp" />
+    <ClCompile Include="Hasel\time\Scheduler\Scheduler.cpp" />
+    <ClCompile Include="Hasel\time\TimerManager.cpp" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
+    </ClCompile>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

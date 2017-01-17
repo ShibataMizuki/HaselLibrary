@@ -130,3 +130,20 @@ const std::vector<shape::Shape>& hasel::cs2d::RigidBody::GetShapes() const
 {
 	return shapes;
 }
+
+math::Vector2 hasel::cs2d::RigidBody::GetMovement() const
+{
+	return movement;
+}
+
+void hasel::cs2d::RigidBody::MovePosition(const math::Vector2 & mover)
+{
+	pos += mover;
+	movement += mover;
+	isAABBChanged = true;
+}
+
+void hasel::cs2d::RigidBody::StepFrame()
+{
+	movement = Vector2(0.f, 0.f);
+}

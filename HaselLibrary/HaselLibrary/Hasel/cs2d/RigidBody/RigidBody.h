@@ -112,6 +112,8 @@ namespace hasel
 		private:
 			// 座標
 			math::Vector2 pos;
+			// 移動ベクトル
+			math::Vector2 movement;
 			// 図形リスト
 			std::vector<shape::Shape> shapes;
 			// 属性リスト
@@ -211,6 +213,20 @@ namespace hasel
 			/// </summary>
 			/// <returns>形状リスト</returns>
 			const std::vector<shape::Shape>& GetShapes()const;
+
+			/// <summary>
+			/// 移動ベクトルを取得する
+			/// </summary>
+			/// <returns>移動ベクトル</returns>
+			math::Vector2 GetMovement()const;
+
+			/// <summary>
+			/// 移動する
+			/// </summary>
+			/// <param name="mover">移動ベクトル</param>
+			void MovePosition(const math::Vector2& mover);
+
+			void StepFrame();
 
 		};
 	}

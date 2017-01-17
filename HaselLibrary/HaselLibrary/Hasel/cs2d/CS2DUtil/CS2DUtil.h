@@ -8,6 +8,8 @@ namespace hasel
 	{
 		class ShapeBase;
 		class Circle;
+		class Segment;
+		class Shape;
 	}
 
 	namespace cs2d
@@ -23,7 +25,7 @@ namespace hasel
 		/// true :Œğ·‚µ‚Ä‚¢‚é
 		/// false:Œğ·‚µ‚Ä‚¢‚È‚¢
 		/// </returns>
-		bool IsIntersectShape(shape::ShapeBase* shapeA, shape::ShapeBase* shapeB, const math::Vector2& posA, const math::Vector2& posB);
+		bool IsIntersectShape(shape::ShapeBase* shapeA, shape::ShapeBase* shapeB, const math::Vector2& posA, const math::Vector2& posB, math::Vector2* inter = nullptr);
 
 		/// <summary>
 		/// ‰~“¯m‚ÌŒğ·”»’è‚ğs‚¤
@@ -33,6 +35,9 @@ namespace hasel
 		/// <param name="posA">}Œ`A‚ÌÀ•W</param>
 		/// <param name="posB">}Œ`B‚ÌÀ•W</param>
 		/// <returns></returns>
-		bool IsIntersectCircle(shape::Circle* circleA, shape::Circle* circleB, const math::Vector2& posA, const math::Vector2& posB);
+		bool IsIntersectCircle(shape::Circle* circleA, shape::Circle* circleB, const math::Vector2& posA, const math::Vector2& posB, math::Vector2* inter = nullptr);
+
+
+		bool IsIntersectCicrleSegment(shape::Circle* circle, shape::Segment* segment, const math::Vector2& posA, const math::Vector2& posB, math::Vector2* inter = nullptr);
 	}
 }

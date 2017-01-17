@@ -23,7 +23,7 @@ Vector2 AABB::GetLower() const
 {
 	Vector2 lower;
 	lower.x = centerPos.x - width / 2.f;
-	lower.y = centerPos.y - width / 2.f;
+	lower.y = centerPos.y - height / 2.f;
 	return move(lower);
 }
 
@@ -35,8 +35,8 @@ AABB::AABB(const Vector2 & centerPos, float width, float height) :
 
 AABB::AABB(const Vector2 & lower, const Vector2 & upper)
 {
-	centerPos.x = (upper.x - lower.x) / 2.f;
-	centerPos.y = (upper.y - lower.y) / 2.f;
+	centerPos.x = (upper.x + lower.x) / 2.f;
+	centerPos.y = (upper.y + lower.y) / 2.f;
 	width = upper.x - lower.x;
 	height = upper.y - lower.y;
 }
@@ -55,7 +55,7 @@ bool AABB::IsIntersect(const AABB & aabb) const
 }
 
 
-AABB AABB::merge(const AABB& aabb1, const AABB& aabb2)
+AABB AABB::Merge(const AABB& aabb1, const AABB& aabb2)
 {
 	Vector2 retLower, retUpper;
 	retLower.x = min(aabb1.GetLower().x, aabb2.GetLower().x);

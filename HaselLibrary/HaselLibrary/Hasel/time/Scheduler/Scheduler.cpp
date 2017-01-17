@@ -10,8 +10,6 @@ sptr<time::Scheduler> hasel::time::Scheduler::Create(float interval, const std::
 	scheduler->interval = interval;
 	scheduler->function = function;
 
-	time::TimerManager::GetInstance()->Add(scheduler);
-
 	return scheduler;
 }
 

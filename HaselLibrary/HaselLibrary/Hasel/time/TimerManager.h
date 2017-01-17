@@ -17,14 +17,14 @@ namespace hasel
 		class TimerManager :public Singletized<TimerManager>
 		{
 		private:
-			std::list<wptr<TimerBase>> timers;
+			std::list<sptr<TimerBase>> timers;
 
 		public:
 			/// <summary>
 			/// タイマーを追加する
 			/// </summary>
 			/// <param name="timer">追加するタイマー</param>
-			void Add(const wptr<TimerBase>& timer);
+			void Add(const sptr<TimerBase>& timer);
 
 			/// <summary>
 			/// タイマーを取り除く
@@ -37,6 +37,11 @@ namespace hasel
 			/// </summary>
 			/// <param name="dt">進める時間</param>
 			void Update(float dt);
+
+			/// <summary>
+			/// 全てのタイマーを取り除く
+			/// </summary>
+			void RemoveAll();
 
 		};
 

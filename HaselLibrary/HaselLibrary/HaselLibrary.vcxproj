@@ -154,6 +154,8 @@
     <ClInclude Include="Hasel\meta\MetaInc.h" />
     <ClInclude Include="Hasel\Shape\AABB\AABB.h" />
     <ClInclude Include="Hasel\Shape\Circle\Circle.h" />
+    <ClInclude Include="Hasel\shape\Polygon\Polygon.h" />
+    <ClInclude Include="Hasel\shape\Segment\Segment.h" />
     <ClInclude Include="Hasel\shape\ShapeBase\ShapeBase.h" />
     <ClInclude Include="Hasel\Shape\ShapeHelper\ShapeHelper.h" />
     <ClInclude Include="Hasel\Shape\ShapeInc.h" />
@@ -180,6 +182,7 @@
     <ClCompile Include="Hasel\Math\Vector2\Vector2.cpp" />
     <ClCompile Include="Hasel\Shape\AABB\AABB.cpp" />
     <ClCompile Include="Hasel\Shape\Circle\Circle.cpp" />
+    <ClCompile Include="Hasel\shape\Segment\Segment.cpp" />
     <ClCompile Include="Hasel\Shape\ShapeHelper\ShapeHelper.cpp" />
     <ClCompile Include="Hasel\shape\ShapeUtil\ShapeUtil.cpp" />
     <ClCompile Include="Hasel\shape\Shape\Shape.cpp" />

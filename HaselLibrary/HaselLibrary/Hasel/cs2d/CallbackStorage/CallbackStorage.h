@@ -44,6 +44,8 @@ namespace hasel
 
 			std::list<Callback> GetAllCallbacks()const;
 
+			void RemoveAll();
+
 		};
 	}
 }

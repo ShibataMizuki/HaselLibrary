@@ -35,7 +35,7 @@ namespace hasel
 			/// <summary>
 			/// 剛体インスタンスを削除する
 			/// </summary>
-			/// <param name="body">削除する剛体インスタンスへの弱参照</param>
+			/// <param name="bodyA">削除する剛体インスタンスへの弱参照</param>
 			void DestroyRigidBody(const wptr<RigidBody>& body);
 
 			/// <summary>
@@ -50,6 +50,8 @@ namespace hasel
 			/// <param name="attribute">指定する属性</param>
 			/// <returns>剛体インスタンスリスト</returns>
 			const std::list<wptr<RigidBody>>& GetRigidBodies(int attribute)const;
+
+			void RemoveAll();
 		};
 	}
 }

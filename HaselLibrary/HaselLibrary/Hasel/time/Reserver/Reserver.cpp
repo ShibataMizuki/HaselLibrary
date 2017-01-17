@@ -15,8 +15,6 @@ sptr<time::Reserver> hasel::time::Reserver::Create(float waitTime, const std::fu
 	reserver->waitTime = waitTime;
 	reserver->function = function;
 
-	time::TimerManager::GetInstance()->Add(reserver);
-
 	return reserver;
 }
 

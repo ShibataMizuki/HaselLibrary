@@ -72,12 +72,12 @@ float Vector2::Dot(const Vector2 & rv) const
 
 float Vector2::Cross(const Vector2 & rv) const
 {
-	return x*rv.y - y*rv.x;
+	return x*rv.y - rv.x*y;
 }
 
 std::string Vector2::Dump() const
 {
 	ostringstream out;
-	out << x << "," << y;
+	out << "x:" << x << " y:" << y;
 	return move(out.str());
 }

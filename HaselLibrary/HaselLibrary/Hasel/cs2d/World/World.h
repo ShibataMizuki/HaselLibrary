@@ -5,14 +5,10 @@
 
 #include"math/MathInc.h"
 #include"HaselAlias.h"
+#include"cs2d/CollisionCallback/CollisionCallback.h"
 
 namespace hasel
 {
-	namespace shape
-	{
-		class Shape;
-	}
-
 	namespace cs2d
 	{
 		class RigidBody;
@@ -30,7 +26,7 @@ namespace hasel
 			sptr<RigidBodyStorage> rigidBodyStorage;
 			sptr<CallbackStorage> callbackStorage;
 
-			bool is_intersect(RigidBody* bodyA, RigidBody* bodyB);
+			Callback::CollisionInfo GetCollideShape(RigidBody* bodyA, RigidBody* bodyB);
 
 		public:
 			/// <summary>
@@ -48,7 +44,7 @@ namespace hasel
 			/// <summary>
 			/// 剛体を削除する
 			/// </summary>
-			/// <param name="body">削除する剛体</param>
+			/// <param name="bodyA">削除する剛体</param>
 			void RemoveRigidBody(const wptr<RigidBody>& body);
 
 			/// <summary>
@@ -80,6 +76,10 @@ namespace hasel
 			/// 衝突の検知及びコールバック関数の呼び出しを行う
 			/// </summary>
 			void ExecuteCollision();
+
+			void StepFrame();
+
+			void Reset();
 		};
 	}
 }

@@ -3,27 +3,29 @@
 
 using namespace hasel;
 
-void hasel::time::TimerManager::Add(const wptr<time::TimerBase>& timer)
+void hasel::time::TimerManager::Add(const sptr<time::TimerBase>& timer)
 {
 	timers.push_back(timer);
 }
 
 void hasel::time::TimerManager::Remove(time::TimerBase * timer)
 {
-	timers.remove_if([&](const wptr<time::TimerBase>& v) {return v.lock().get() == timer; });
+	timers.remove_if([&](const sptr<time::TimerBase>& v) {return v.get() == timer; });
 }
 
 void hasel::time::TimerManager::Update(float dt)
 {
 	for (auto& timer : timers)
 	{
-		if (timer.expired())
+		if (!timer->IsActive())
 			continue;
 
-		if (!timer.lock()->IsActive())
-			continue;
-
-		timer.lock()->Step(dt);
-		timer.lock()->Update();
+		timer->Step(dt);
+		timer->Update();
 	}
+}
+
+void hasel::time::TimerManager::RemoveAll()
+{
+	timers.clear();
 }

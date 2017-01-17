@@ -6,6 +6,8 @@ namespace hasel
 {
 	namespace shape
 	{
+		class Segment;
+
 		/// <summary>
 		/// ‰~‚ğì¬‚·‚é
 		/// </summary>
@@ -26,5 +28,9 @@ namespace hasel
 		/// <param name="radius">”¼Œa</param>
 		/// <returns>‰~</returns>
 		Shape MakeCircle(const math::Vector2& offset, float radius);
+
+		Shape MakeSegment(const math::Vector2& start, const math::Vector2& end);
+
+		float GetDistance(const math::Vector2& point, const shape::Segment* segment,const math::Vector2& segmentPos);
 	}
 }

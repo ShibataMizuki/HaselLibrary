@@ -27,7 +27,7 @@ AABB hasel::shape::CreateAABBFromShapes(const std::vector<Shape>& shapes, const 
 	for (auto shape : shapes)
 	{
 		AABB merger = shape->aabb;
-		merger.centerPos = shape->offset + pos;
+		merger.centerPos += shape->offset + pos;
 		result = MergeAABB(result, merger);
 	}
 	return move(result);

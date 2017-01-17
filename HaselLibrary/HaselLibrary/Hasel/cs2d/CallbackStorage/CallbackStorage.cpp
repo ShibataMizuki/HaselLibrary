@@ -28,3 +28,8 @@ std::list<Callback> hasel::cs2d::CallbackStorage::GetAllCallbacks() const
 
 	return move(result);
 }
+
+void hasel::cs2d::CallbackStorage::RemoveAll()
+{
+	callbacks.clear();
+}

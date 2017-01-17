@@ -117,6 +117,12 @@
     <ClInclude Include="Hasel\shape\ShapeUtil\ShapeUtil.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
+    <ClInclude Include="Hasel\shape\Segment\Segment.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Hasel\shape\Polygon\Polygon.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -171,6 +177,9 @@
       <Filter>ソース ファイル</Filter>
     </ClCompile>
     <ClCompile Include="Hasel\shape\ShapeUtil\ShapeUtil.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Hasel\shape\Segment\Segment.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
   </ItemGroup>

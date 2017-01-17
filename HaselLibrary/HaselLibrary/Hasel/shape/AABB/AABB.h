@@ -72,7 +72,7 @@ namespace hasel
 			@brief 2‚Â‚ÌAABB‚ğ‡¬‚·‚é
 			@return ‡¬‚µ‚½AABB
 			*/
-			static AABB merge(const AABB& aabb1, const AABB& aabb2);
+			static AABB Merge(const AABB& aabb1, const AABB& aabb2);
 
 			void Dump()const;
 		};

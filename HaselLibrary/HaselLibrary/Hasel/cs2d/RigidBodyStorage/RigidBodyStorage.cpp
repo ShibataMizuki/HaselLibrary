@@ -43,3 +43,9 @@ const std::list<wptr<RigidBody>>& hasel::cs2d::RigidBodyStorage::GetRigidBodies(
 {
 	return groupedRigidBodies.at(attribute);
 }
+
+void hasel::cs2d::RigidBodyStorage::RemoveAll()
+{
+	rigidBodyies.clear();
+	groupedRigidBodies.clear();
+}

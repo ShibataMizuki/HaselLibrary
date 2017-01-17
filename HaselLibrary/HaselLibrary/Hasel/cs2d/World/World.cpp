@@ -14,10 +14,9 @@ using namespace hasel;
 using namespace hasel::shape;
 using namespace hasel::cs2d;
 
-bool hasel::cs2d::World::is_intersect(RigidBody * bodyA, RigidBody * bodyB)
+Callback::CollisionInfo hasel::cs2d::World::GetCollideShape(RigidBody * bodyA, RigidBody * bodyB)
 {
-	bool result = false;
-
+	Callback::CollisionInfo info;
 	auto shapesA = bodyA->GetShapes();
 	auto shapesB = bodyB->GetShapes();
 
@@ -25,15 +24,17 @@ bool hasel::cs2d::World::is_intersect(RigidBody * bodyA, RigidBody * bodyB)
 	{
 		for (auto& shapeB : shapesB)
 		{
-			result = cs2d::IsIntersectShape(
+			bool isCollide = cs2d::IsIntersectShape(
 				shapeA.GetRaw(), shapeB.GetRaw(),
 				bodyA->GetPosition(), bodyB->GetPosition());
-			if (result)
-				break;
+			if (isCollide)
+			{
+				info.collideShapeA.push_back(shapeA.GetRaw());
+				info.collideShapeB.push_back(shapeB.GetRaw());
+			}
 		}
 	}
-
-	return result;
+	return move(info);
 }
 
 hasel::cs2d::World::World()
@@ -89,13 +90,27 @@ void hasel::cs2d::World::ExecuteCollision()
 				if (!isHitAABB)
 					continue;
 
-				bool isHitShapes = is_intersect(bodyA.lock().get(), bodyB.lock().get());
-				if (!isHitShapes)
+				auto info = GetCollideShape(bodyA.lock().get(), bodyB.lock().get());
+				if (info.collideShapeA.empty())
 					continue;
 
-				callback(bodyA, bodyB);
+				callback(bodyA, bodyB, info);
 			}
 		}
 	}
 	
+}
+
+void hasel::cs2d::World::StepFrame()
+{
+	for (auto body : rigidBodyStorage->GetRigidBodies())
+	{
+		body.lock()->StepFrame();
+	}
+}
+
+void hasel::cs2d::World::Reset()
+{
+	callbackStorage->RemoveAll();
+	rigidBodyStorage->RemoveAll();
 }

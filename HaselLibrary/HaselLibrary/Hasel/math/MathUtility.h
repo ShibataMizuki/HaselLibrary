@@ -1,5 +1,7 @@
 #pragma once
 
+#include"math/Vector2/Vector2.h"
+
 namespace hasel
 {
 	namespace math
@@ -8,6 +10,11 @@ namespace hasel
 		/// 円周率
 		/// </summary>
 		constexpr float PI = 3.141592654f;
+
+		/// <summary>
+		/// 誤差丸め用の極小値
+		/// </summary>
+		constexpr float Epsilon = 0.00001f;
 
 		/// <summary>
 		/// radian値をdegree値に変換する
